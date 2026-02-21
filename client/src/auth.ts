@@ -12,7 +12,7 @@ import {
 	TokenData,
 } from "./types.js"
 
-const DEFAULT_PROXY_URL = "https://aws-static-sso.rbw.sh"
+const DEFAULT_PROXY_URL = process.env.AWS_STATIC_SSO_PROXY_URL ?? ""
 
 const STORAGE_KEYS = {
 	client: (region: string) => `aws-sso:client:${region}`,
@@ -41,7 +41,9 @@ export class SSOAuth {
 	constructor(options: SSOAuthOptions) {
 		this.startUrl = options.startUrl
 		this.region = options.region
-		this.proxyUrl = (options.proxyUrl || DEFAULT_PROXY_URL).replace(/\/$/, "")
+		const proxyUrl = options.proxyUrl || DEFAULT_PROXY_URL
+		if (!proxyUrl) throw new Error("proxyUrl is required (pass it in options or set AWS_STATIC_SSO_PROXY_URL)")
+		this.proxyUrl = proxyUrl.replace(/\/$/, "")
 	}
 
 	on(listener: SSOAuthEventListener): void {
