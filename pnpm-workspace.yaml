@@ -1,0 +1,8 @@
+packages:
+  - worker
+  - client
+
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+  - workerd
