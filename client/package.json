@@ -1,15 +1,17 @@
 {
   "name": "aws-static-sso",
-  "version": "0.1.0",
+  "version": "0.1.0-dist.3fcd80e",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  },
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist"
-  },
-  "devDependencies": {
-    "typescript": "^5.7.0"
   }
 }
