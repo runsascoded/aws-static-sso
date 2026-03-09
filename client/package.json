@@ -1,6 +1,6 @@
 {
   "name": "aws-static-sso",
-  "version": "0.1.0-dist.5861105",
+  "version": "0.1.0-dist.4c834c2",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
