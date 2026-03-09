@@ -1,0 +1,14 @@
+{
+  "name": "aws-static-sso",
+  "runtime": "cloudflare",
+  "allow": ["oidc.*.amazonaws.com", "portal.sso.*.amazonaws.com"],
+  "methods": ["*"],
+  "forwardHeaders": ["content-type", "authorization", "x-amz-sso_bearer_token"],
+  "urlMode": "path",
+  "cors": { "origins": ["*"], "maxAge": 86400 },
+  "rateLimit": { "perIp": 100, "window": "1m" },
+  "cache": { "ttl": 0, "maxSize": 0 },
+  "cloudflare": {
+    "accountId": "0dcad5654e9744de6616f74b8df4af63"
+  }
+}
