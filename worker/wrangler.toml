@@ -1,6 +1,0 @@
-name = "aws-static-sso"
-main = "src/index.ts"
-compatibility_date = "2024-12-01"
-
-# Rate limiting: 100 requests per minute per IP
-# (configured via Cloudflare dashboard rules, noted here for reference)

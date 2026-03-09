@@ -3,6 +3,10 @@
   "packageManager": "pnpm@10.18.1",
   "scripts": {
     "build": "pnpm -r run build",
-    "dev": "pnpm --filter worker run dev"
+    "dev": "cors-prxy dev",
+    "deploy": "cors-prxy deploy"
+  },
+  "devDependencies": {
+    "cors-prxy": "https://github.com/runsascoded/cors-prxy#1fee1c20cdcd8ddf0830c99e77c60e84351ce9c0"
   }
 }
